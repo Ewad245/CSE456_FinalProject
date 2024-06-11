@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+  <property name="hibernate.connection.password">admin</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/library_db</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+  <!-- Xóa - tạo lại toàn bộ 
+ <property name="hibernate.hbm2ddl.auto">create-drop</property> 
+ Cập nhật bổ sung, giữ nguyên cái cũ (Sử dụng 1 trong 2) -->
+  <property name="hibernate.hbm2ddl.auto">update</property>
+  
+  <!-- Hiển thị câu lệnh sql trong console -->
+  <property name="show_sql">true</property>
+  
+  <!-- Thiết lập các lớp muốn ánh xạ xuống database
+        	 - Để kiểm tra có thế bấm ctrl và click và model, 
+        	 nếu ra link là đúng đường dẫn class cần ánh xạ. 
+         -->
+  <mapping class="com.lib.model.Book"/>
+  <mapping class="com.lib.model.BorrowedBook"/>
+  <mapping class="com.lib.model.Librarian"/>
+  <mapping class="com.lib.model.Member"/>
+  
+ </session-factory>
+</hibernate-configuration>

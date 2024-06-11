@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	metadata-complete="false" version="3.1">
+	<display-name>Library Management</display-name>
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<filter>
+		<filter-name>SessionFilter</filter-name>
+		<filter-class>com.lib.controller.admin.SessionFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/manageBooks.jsp</url-pattern>
+		<url-pattern>/manageMembers.jsp</url-pattern>
+		<url-pattern>/addBook.jsp</url-pattern>
+		<url-pattern>/editBook.jsp</url-pattern>
+		<url-pattern>/addMember.jsp</url-pattern>
+	</filter-mapping>
+</web-app>
